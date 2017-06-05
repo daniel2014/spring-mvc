@@ -38,6 +38,8 @@ public class ProdutosController {
 
         produtosService.salvar(produto);
 
+        model.addAttribute("produto", new Produto());
+
         return "produtos/form";
     }
 }
