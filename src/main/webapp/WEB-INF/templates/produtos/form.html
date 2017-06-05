@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Formulário de Produtos</title>
+</head>
+
+<body>
+
+    <div>
+
+        <form th:action="@{/produtos}" th:method="post" th:object="${produto}">
+
+            <div>
+                <label for="titulo">Título</label>
+                <input id="titulo" type="text" name="titulo" th:field="*{titulo}" />
+            </div>
+
+            <div>
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" rows="10" cols="20" name="descricao" th:field="*{descricao}" ></textarea>
+            </div>
+
+            <div>
+                <label for="paginas">Páginas</label>
+                <input id="paginas" type="text" name="paginas" th:field="*{paginas}" />
+            </div>
+
+            <button th:type="submit">Cadastrar</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
