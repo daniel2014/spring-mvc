@@ -32,7 +32,7 @@ public class ProdutosController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String salvar(Produto produto, Model model){
+    public String gravar(Produto produto, Model model){
 
         System.out.println(produto);
 
