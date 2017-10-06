@@ -29,19 +29,23 @@
                 <input id="paginas" type="text" name="paginas" th:field="*{paginas}" />
             </div>
 
-            <div>
-                <label for="ebook">E-book</label>
-                <input id="ebook" type="text" name="ebook" th:field="*{ebook}" />
-            </div>
+            <br />
 
-            <div>
-                <label for="impresso">Impresso</label>
-                <input id="impresso" type="text" name="impresso" th:field="*{impresso}" />
-            </div>
+            <div th:each="tipoPreco : ${ tipos }">
+                <label th:text="${tipoPreco}"></label>
+                <input type="text" th:name="${tipoPrecoStat.index}" th:value="*{precos}"/>
+                <input type="hidden" th:name="${tipoPrecoStat.index}" th:value="${tipoPreco}" />
 
-            <div>
-                <label for="combo">Combo</label>
-                <input id="combo" type="text" name="combo" th:field="*{combo}" />
+                <!--
+
+                <input type="text" name="${tipoPrecoStat.valor}"  />
+                <input type="hidden" name="${tipoPrecoStat.tipo}" th:value="${tipoPreco}" />
+
+
+                <input type="text" name="${tipoPrecoStat.valor}" th:field="${tipoPreco.valor}" />
+                <input type="hidden" name="${tipoPrecoStat.tipo}" th:value="${tipoPreco.tipo}" />
+
+                -->
             </div>
 
             <button th:type="submit">Cadastrar</button>
